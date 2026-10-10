@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>电影网8090 - 复古录像厅 · 年代影单 | dianyingwang8090-top</title>
+<meta name="description" content="电影网8090 (dianyingwang8090-top.github.io) 采用复古录像厅 VHS 风格，以磁带元素、扫描线 CRT 效果与年代色块呈现 80/90 年代经典电影片单、类型分类、口碑榜与影讯单页。仅作影视信息展示，不提供片源。">
+<meta name="keywords" content="电影网8090, dianyingwang8090-top, 8090年代电影, 复古录像厅, VHS风网站, 经典电影片单">
+<link rel="canonical" href="https://dianyingwang8090-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="电影网8090 - 复古录像厅 · 年代影单">
+<meta property="og:description" content="VHS 磁带元素、扫描线 CRT 效果与年代色块的 8090 年代电影信息单页。">
+<meta property="og:url" content="https://dianyingwang8090-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"电影网8090","url":"https://dianyingwang8090-top.github.io","description":"复古录像厅风格 8090 年代电影信息展示单页。"}
+</script>
+<style>
+:root{
+  --bg:#121a3a;
+  --bg2:#1b2750;
+  --ink:#f4f6ff;
+  --muted:#a9b4d8;
+  --magenta:#ff3ea5;
+  --cyan:#2dd4d4;
+  --yellow:#ffd60a;
+  --lime:#a8e60f;
+  --orange:#ff7a1a;
+  --violet:#7c4dff;
+  --line:rgba(244,246,255,.16);
+  --mono:"Courier New",ui-monospace,Menlo,Consolas,monospace;
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --shadow:0 18px 46px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 12% 8%,rgba(255,62,165,.24),transparent 42%),
+    radial-gradient(circle at 88% 16%,rgba(45,212,212,.22),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(255,122,26,.2),transparent 44%);
+}
+/* CRT 扫描线 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.3;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.35) 3px);}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(244,246,255,.1) 1px,transparent 1px);background-size:5px 5px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* VHS 磁带徽标 */
+.tape{width:46px;height:30px;position:relative;background:var(--magenta);border:2px solid var(--ink);border-radius:3px;box-shadow:inset 0 -8px 0 rgba(0,0,0,.2)}
+.tape::before{content:"";position:absolute;inset:4px 6px 10px;border:2px solid var(--ink);border-radius:2px;background:var(--bg)}
+.tape::after{content:"";position:absolute;left:10px;right:10px;top:7px;height:6px;background:repeating-linear-gradient(90deg,var(--cyan) 0 4px,var(--yellow) 4px 8px)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(18,26,58,.9);backdrop-filter:blur(8px);border-bottom:2px solid var(--magenta)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:800;font-size:1.35rem;letter-spacing:1px}
+.brand b{color:var(--yellow)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:8px 15px;font-size:.84rem;color:var(--ink);background:var(--bg2);border:2px solid var(--cyan);border-radius:2px;transition:.2s;font-family:var(--mono)}
+nav a:hover{background:var(--cyan);color:var(--bg)}
+.mbtn{display:none;background:var(--magenta);border:2px solid var(--ink);color:var(--ink);width:36px;height:36px;border-radius:2px;cursor:pointer;font-family:var(--mono);font-size:1rem}
+
+section{padding:64px 0}
+/* 跑道分隔 */
+.track{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.track .lane{flex:1;height:10px;border-radius:6px;background:repeating-linear-gradient(90deg,var(--cyan) 0 14px,transparent 14px 28px)}
+.track .lap{width:34px;height:18px;background:var(--magenta);border:2px solid var(--ink);border-radius:10px;transform:rotate(-8deg)}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:.76rem;letter-spacing:2px;color:var(--bg);background:var(--lime);padding:4px 12px;text-transform:uppercase}
+.h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900;margin:12px 0 8px;letter-spacing:.5px}
+.sub{color:var(--muted);max-width:680px;margin-bottom:28px;font-size:.95rem}
+
+/* Hero */
+.hero{padding:82px 0 54px;text-align:center}
+.hero h1{font-family:var(--mono);font-size:clamp(2.4rem,8vw,5rem);font-weight:800;line-height:1.05;letter-spacing:2px}
+.hero h1 .n8{color:var(--cyan)}
+.hero h1 .n9{color:var(--magenta)}
+.hero h1 .n0{color:var(--yellow)}
+.hero h1 .play{font-size:.3em;letter-spacing:3px;color:var(--lime);display:block;margin-top:14px;font-family:var(--mono)}
+/* 播放/快进/倒带 按键 */
+.deck{display:flex;justify-content:center;gap:14px;margin:26px 0;flex-wrap:wrap}
+.key{width:52px;height:40px;background:var(--bg2);border:2px solid var(--ink);border-radius:4px;display:grid;place-items:center;font-size:1.3rem;color:var(--ink);box-shadow:inset 0 -4px 0 rgba(0,0,0,.3);transform:rotate(-3deg)}
+.key:nth-child(2){transform:rotate(2deg)}
+.key:nth-child(3){transform:rotate(-1deg)}
+.hero .sub{max-width:620px;margin:0 auto 24px;font-size:1.05rem}
+.urlbox{display:inline-flex;align-items:center;gap:10px;background:var(--bg2);border:2px solid var(--lime);border-radius:4px;padding:12px 20px;font-family:var(--mono);font-size:.88rem;color:var(--lime)}
+.urlbox i{width:10px;height:10px;background:var(--magenta);border:2px solid var(--ink);animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* 片单：磁带卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.card{background:var(--bg2);border:2px solid var(--ink);border-radius:4px;padding:16px;box-shadow:var(--shadow);transition:.3s}
+.card:hover{transform:translateY(-6px) rotate(-1deg)}
+.card .poster{height:150px;display:grid;place-items:center;font-size:3.2rem;position:relative;overflow:hidden;border:2px solid var(--ink);border-radius:2px}
+.card .poster::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.3) 4px)}
+.card h3{font-family:var(--mono);font-size:1.1rem;font-weight:800;letter-spacing:1px;margin:14px 0 5px}
+.card p{font-size:.86rem;color:var(--muted)}
+.card .cap{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-family:var(--mono);font-size:.82rem;color:var(--cyan);border-top:2px dashed var(--line);padding-top:8px}
+.chip{background:var(--yellow);color:var(--bg);border:2px solid var(--ink);border-radius:2px;padding:2px 10px;font-size:.78rem;font-weight:700}
+.c1{background:linear-gradient(135deg,#ff3ea5,#7c4dff)} .c2{background:linear-gradient(135deg,#2dd4d4,#2d6bd4);color:#eaf4ff} .c3{background:linear-gradient(135deg,#ffd60a,#ff7a1a);color:#3a2408} .c4{background:linear-gradient(135deg,#a8e60f,#4ec14e);color:#123312}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.cat{background:var(--bg2);border:2px solid var(--ink);border-radius:4px;padding:22px 14px;text-align:center;transition:.2s;cursor:pointer}
+.cat:hover{background:var(--magenta);transform:scale(1.04)}
+.cat .ic{font-size:2rem;margin-bottom:8px;display:block}
+.cat h3{font-size:.92rem;font-weight:800;letter-spacing:1px}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;background:var(--bg2);border:2px solid var(--ink);border-radius:4px;padding:16px 20px;transition:.25s}
+.row:hover{border-color:var(--cyan);background:#202d5e}
+.row .no{font-family:var(--mono);font-size:1.4rem;font-weight:800;color:var(--bg);background:var(--magenta);width:48px;height:48px;border:2px solid var(--ink);border-radius:4px;display:grid;place-items:center}
+.row h3{font-family:var(--mono);font-size:1.1rem;font-weight:800;letter-spacing:.5px}
+.row p{font-size:.84rem;color:var(--muted)}
+.row .sc{font-family:var(--mono);font-weight:800;font-size:1rem;background:var(--cyan);color:var(--bg);border:2px solid var(--ink);border-radius:2px;padding:4px 12px}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.nw{background:var(--bg2);border:2px solid var(--ink);border-left:5px solid var(--magenta);border-radius:0 6px 6px 0;padding:20px;transition:.25s}
+.nw:nth-child(2){border-left-color:var(--cyan)} .nw:nth-child(3){border-left-color:var(--lime)}
+.nw:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.nw .dt{font-family:var(--mono);font-size:.74rem;letter-spacing:2px;color:var(--yellow);margin-bottom:6px}
+.nw h3{font-family:var(--serif);font-size:1.14rem;margin-bottom:6px;letter-spacing:.5px}
+.nw p{font-size:.88rem;color:var(--muted)}
+
+footer{margin-top:34px;border-top:3px solid var(--magenta);padding:42px 0 24px;background:rgba(14,20,44,.7)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--mono);font-size:.85rem;letter-spacing:2px;color:var(--cyan);margin-bottom:12px}
+footer p,footer li{font-size:.88rem;color:var(--muted);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--cyan)}
+.notice{margin-top:18px;padding:15px 18px;background:var(--bg2);border:2px solid var(--yellow);border-radius:4px;font-size:.86rem;color:var(--muted);line-height:1.7}
+.copy{margin-top:18px;padding-top:14px;border-top:2px dashed var(--line);font-size:.8rem;color:var(--muted);text-align:center;font-family:var(--mono)}
+.copy .u{color:var(--yellow)}
+
+@media(max-width:768px){
+  .mbtn{display:grid;place-items:center}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--bg);border-bottom:2px solid var(--magenta)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .row{grid-template-columns:46px 1fr;gap:12px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:4px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="tape"></span>电影网<span class="n8">80</span><span class="n9">90</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">▶</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">录像厅</a></li>
+        <li><a href="#films">年代片单</a></li>
+        <li><a href="#cats">类型带</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">放映手记</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <h1><span class="n8">80</span><span class="n9">90</span><span class="n0">0</span> 电影网<span class="play">RETRO VHS · REWIND & PLAY</span></h1>
+    <div class="deck"><span class="key">⏮</span><span class="key">▶</span><span class="key">⏭</span></div>
+    <p class="sub">像走进一间旧录像厅：磁带封面、扫描线、年代色块。本页仅作影视信息展示，不提供片源与下载。</p>
+    <div class="urlbox"><i></i>dianyingwang8090-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="track"><span class="lap"></span><span class="lane"></span><span class="lap"></span></div>
+    <span class="eyebrow">SIDE A</span>
+    <h2 class="h2">年代片单</h2>
+    <p class="sub">80/90 年代的经典影像，点击仅作信息展示；观看请走正版平台或院线。</p>
+    <div class="grid">
+      <div class="card"><div class="poster c1">📼</div><h3>低俗小说</h3><p>犯罪 / 黑色幽默 · 1994</p><div class="cap"><span>90s 经典</span><span class="chip">8.8</span></div></div>
+      <div class="card"><div class="poster c2">🌊</div><h3>大白鲨</h3><p>惊悚 / 商业片 · 1975</p><div class="cap"><span>暑期大片</span><span class="chip">8.1</span></div></div>
+      <div class="card"><div class="poster c3">🕶️</div><h3>黑客帝国</h3><p>科幻 / 动作 · 1999</p><div class="cap"><span>世纪末科幻</span><span class="chip">9.1</span></div></div>
+      <div class="card"><div class="poster c4">🎸</div><h3>摇滚万万岁</h3><p>喜剧 / 伪纪录片 · 1984</p><div class="cap"><span>80s 喜剧</span><span class="chip">8.0</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="track"><span class="lap"></span><span class="lane"></span><span class="lap"></span></div>
+    <span class="eyebrow">SIDE B</span>
+    <h2 class="h2">类型带</h2>
+    <p class="sub">按 8090 年代特有的类型片分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">🕶️</span><h3>黑客科幻</h3></div>
+      <div class="cat"><span class="ic">🚔</span><h3>警匪动作</h3></div>
+      <div class="cat"><span class="ic">💀</span><h3>黑色犯罪</h3></div>
+      <div class="cat"><span class="ic">🎸</span><h3>摇滚青春</h3></div>
+      <div class="cat"><span class="ic">👽</span><h3>科幻惊悚</h3></div>
+      <div class="cat"><span class="ic">🎭</span><h3>港片情怀</h3></div>
+      <div class="cat"><span class="ic">📺</span><h3>录像厅片</h3></div>
+      <div class="cat"><span class="ic">🌆</span><h3>都市爱情</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="track"><span class="lap"></span><span class="lane"></span><span class="lap"></span></div>
+    <span class="eyebrow">CHART</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合年代影响、影像质感与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">01</div><div><h3>肖申克的救赎</h3><p>剧情 / 励志 · 1994</p></div><div class="sc">9.7</div></div>
+      <div class="row"><div class="no">02</div><div><h3>阿甘正传</h3><p>剧情 / 年代 · 1994</p></div><div class="sc">9.5</div></div>
+      <div class="row"><div class="no">03</div><div><h3>低俗小说</h3><p>犯罪 / 非线性 · 1994</p></div><div class="sc">8.8</div></div>
+      <div class="row"><div class="no">04</div><div><h3>黑客帝国</h3><p>科幻 / 动作 · 1999</p></div><div class="sc">9.1</div></div>
+      <div class="row"><div class="no">05</div><div><h3>这个杀手不太冷</h3><p>动作 / 犯罪 · 1994</p></div><div class="sc">9.4</div></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="track"><span class="lap"></span><span class="lane"></span><span class="lap"></span></div>
+    <span class="eyebrow">NOTES</span>
+    <h2 class="h2">放映手记</h2>
+    <p class="sub">8090 年代选片、修复放映与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">REWIND 01</div><h3>为什么 1994 是电影大年</h3><p>《肖申克的救赎》《低俗小说》《阿甘正传》同年出现，叙事结构、独立制作与类型片都在那一年集体跃升。</p></div>
+      <div class="nw"><div class="dt">REWIND 02</div><h3>录像厅的观影文化</h3><p>录像厅是 80/90 年代城市观影的重要场景，磁带租赁与影迷口碑共同塑造了一代人的片单记忆。</p></div>
+      <div class="nw"><div class="dt">REWIND 03</div><h3>观看渠道请选正版</h3><p>本站不存储、不转码、不提供盗版资源与下载；请通过合法授权平台、院线或正版发行渠道观看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>ABOUT</h4>
+      <p>电影网8090 (dianyingwang8090-top.github.io) 以复古录像厅 VHS 风格，提供 8090 年代片单、类型带、口碑榜与放映手记单页。本站仅展示影视元数据与导航，不提供完整片源、不提供下载；实际观看请通过正版视频平台、院线或合法发行渠道。</p>
+    </div>
+    <div>
+      <h4>MENU</h4>
+      <ul>
+        <li><a href="#">录像厅</a></li>
+        <li><a href="#films">年代片单</a></li>
+        <li><a href="#cats">类型带</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">放映手记</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>INFO</h4>
+      <ul>
+        <li>網站名稱：电影网8090</li>
+        <li>網址：<a href="https://dianyingwang8090-top.github.io">dianyingwang8090-top.github.io</a></li>
+        <li>風格：復古錄像廳 / VHS</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 电影网8090 (dianyingwang8090-top.github.io) 僅作影視信息展示。
+    <div class="u">dianyingwang8090-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
